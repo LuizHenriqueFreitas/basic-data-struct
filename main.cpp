@@ -334,10 +334,13 @@ int main()
     cout << endl;
     cout << endl;
 
+    cout << endl << "Removendo 25 recursivamente:  ";
     RecursiveRemoveItem(root, 25);
     ShowPreOrder(root);
+    cout << endl << endl << "Removendo 55 iterativamente:  ";
     InterativeRemoveItem(root, 55);
     ShowPreOrder(root);
-    
+    cout << endl << endl;
+
     return 0;
 }
