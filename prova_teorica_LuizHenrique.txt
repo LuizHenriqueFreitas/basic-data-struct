@@ -69,3 +69,41 @@ B-> enqueue(5) - fila = 5
 
 -----------------------------------------------------
 
+
+resposta 5
+
+A->Cada nó possui um ponteiro para o próximo nó da lista; 
+   Estrutura simples com uso eficiente de memoria; 
+   Util para aplicação de filas e pilhas simples onde basta percorrer em uma única direção.
+
+B->Cada nó possui um ponteiro para o próximo e um para o anterior;
+   Permite melhor navegação entre os nós;
+   Ideal para aplicações que prescisam voltar e avançar, como navegadores, editores de texto ou listas com remoção em qualquer posição;
+
+C->Uma variação onde o último nó aponta devolta para o primeiro, pode ser simples ou encadeada;
+   Bom para navegação contínua, sem prescisar resetar a busca;
+   Comum em algoritmos de agendamento, como round-robin;
+
+-----------------------------------------------------
+
+resposta 6
+
+A-> f(4) retorna 10
+
+B-> essa função calcula a soma dos numeros inteiro de 1 até "N" - 4+3+2+1 = 10, como podemos ver na questão anterior;
+
+C-> Sim, como essa função se baseia em somas cumulativas, basta a utilização de um laço for;
+    Toda função recursiva pode ser feita de forma interativa, essas versões tendem a ser mais eficientes e mais complexas que as recursivas de acordo com o problema a ser solucionado.
+
+-----------------------------------------------------
+
+resposta 7
+
+A-> ARRAY: acesso muito rápido pelo índice;
+    LISTA ENCADEADA: acesso sequencial, pois é necessário percorrer a lista ate o elemento desejado, mesmo tendo uma noção de onde ele esteja;
+
+B-> ARRAY: Custa caro, pois é necessário deslocar todos os elementos uma posição para frente;
+    LISTA ENCADEADA: Muito rápido, basta acertar os ponteiros;
+
+C-> ARRAY: Usa memoria pré alocada e relativamente fixa, pode causar desperdicio e demais problemas;
+    LISTA ENCADEADA: Usa memoria conforme a demanda, mas cada nó ocupa mais espaço, pois guardam ponteiros alem do valor em si;
