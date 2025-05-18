@@ -1,0 +1,71 @@
+resposta 1
+
+entradas:            30, 20, 40, 10, 25, 35, 50
+
+arvore:              30(20(10,25),40(35,50))
+
+remove 20 e 40
+
+nova arvore:         30(25(10)35(50))
+
+percurso pós ordem:  10, 25, 50, 35, 30
+
+---------------------------------------------------
+
+resposta 2
+
+entradas:            50, 30, 70, 20, 10
+
+arvore:              50(30(20(10)),70) -> esta desequilibrada, tendo 3 niveis de altura na esquerda, contra 1 na direita
+
+necessita rotação LL
+
+arvore apos rotação  30(20(10),50(70))
+
+---------------------------------------------------
+
+resposta 3
+
+A-> N-arias são utilizadas para representar relações hieráquicas genéricas com maximo de filhos "N", onde os dados podem estar armazenasdos em diferentes nós sem uma ordenação específica; Já em Trie, as coisas funcionam de maneira muito mais especializada para o armazenamento de strings onde cada nivel representa um caractere da palavra e palavras completas(dados) só existem no fim de caminhos válidos, sendo que diferentes "nós" podem ser compartilhados entre varias palavras parecidas. 
+
+B-> Um bom exemplo do funcionamento de Tries é em buscadores de verificação ou corretor de palavras, como podemos ver no exemplo abaixo, ao sigitarmos "ga" o sistema já pode esperar por algo como "gato", "galho", "galo", "garra" ou outros valores disponíveis em seus dados armazenados
+
+C->       (g)
+           |
+          (a)
+           |
+        ------
+       |  |   |
+      (t)(l) (r)
+       |  |   |
+      (o)(h) (r)
+           |   |
+          (o) (a)
+               |
+              (␣)
+
+---------------------------------------------------
+
+resposta 4
+
+A-> push(1) - pilha = 1
+    push(2) - pilha = 1, 2
+    push(3) - pilha = 1, 2, 3
+    pop()   - pilha = 1, 2
+    push(4) - pilha = 1, 2, 4
+    pop()   - pilha = 1, 2
+    -------------------------
+    base final = 1
+    topo final = 2
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+B-> enqueue(5) - fila = 5
+    enqueue(6) - fila = 5, 6
+    denqueue() - fila = 6
+    enqueue(7) - fila = 6, 7
+    denqueue() - fila = 7
+    ------------------------
+    conteúdo final da fila = 7 (apenas isso)
+
+-----------------------------------------------------
+
