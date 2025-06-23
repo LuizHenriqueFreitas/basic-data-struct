@@ -1,0 +1,19 @@
+Dado que o algoritmo Quick Sort tem complexidade média de O(n log n) e o algoritmo Bubble Sort tem complexidade O(n^2), qual afirmação é correta?
+RESPOSTA: O Quick Sort tende a ser mais eficiente para grandes conjuntos de dados.
+
+Qual dos seguintes algoritmos é considerado instável?
+RESPOSTA: Selection Sort
+OUTRAS OPÇÕES: Insertion Sort, Merge Sort, Counting Sort, Bubble Sort
+
+A complexidade de espaço do Merge Sort é O(n) por quê?
+RESPOSTA: Ele cria subarrays temporários em cada etapa de intercalação.
+
+Após a primeira iteração completa do algoritmo Insertion Sort, considerando a entrada [7, 3, 5, 1, 2], qual será a nova sequência?
+RESPOSTA: [3, 7, 5, 1, 2]
+
+Qual algoritmo apresenta desempenho linear O(n) no melhor caso, quando o array já está ordenado?
+RESPOSTA: Bubble Sort com otimização
+OUTRAS OPÇÕES: Merge Sort, Counting Sort, Heap Sort, Selection Sort
+
+Cite uma vantagem do Insertion Sort sobre o Selection Sort.
+RESPOSTA: Possui menor complexidade de tempo no melhor caso, quando um array já está ordenado (ou quase ordenado), sendo O(n). Já o Selection Sort sempre é O(n^2), independentemente do caso.

@@ -1,0 +1,10 @@
+Exercício 1: em TabelaLista2.png
+
+Exercício 2:
+a) c1 = 4; c2 = 4; n = 1
+b) c1 = 1; c2 = 2; n = 1
+c) c = 1; n = 1
+d) c = 4; n = 1
+e) c = 1; n = 1
+f) c = 1; n = 1
+g) c = 10; n = 1
