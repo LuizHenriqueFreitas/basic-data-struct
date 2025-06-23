@@ -1,0 +1,36 @@
+1) Defina os seguintes conceitos relacionados a grafos:
+	a) Vértice (ou nó): Elemento fundamental de um grafo, representando um objeto do sistema sendo analisado.
+	b) Aresta: Conexão entre dois vértices, representando um relacionamento ou ligação entre objetos.
+	c) Grafo direcionado: Tipo de grafo em que as arestas possuem direções específicas, sinalizadas por setas.
+	d) Grafo não direcionado: Tipo de grafo em que as arestas não possuem direção específica, tornando conexões entre vértices mútuas.
+	e) Grafo ponderado: Tipo de grafo em que arestas possuem valores associados a elas (chamados de pesos), podendo representar diversas coisas dependendo do problema trabalhado.
+
+2) Explique a diferença entre a representação de grafos por matriz de adjacência e por lista de adjacência, citando vantagens e desvantagens de cada uma.
+RESPOSTA: A matriz de adjacência representa o grafo como uma matriz de dimensões V x V (sendo V o número de vértices do grafo), na qual células[i][j] recebem valores (podendo ser 1 ou o peso da aresta, se aplicável) se existir uma aresta indo do vértice i pro vértice j (e vice-versa, caso não haja direcionamento). Permite verificações mais rápidas de adjacências e funciona bem com grafos ponderados, mas em aplicações práticas, exige muita memória e torna o processo de adicionar/remover vértices custoso.
+	  Já a lista de adjacência representa o grafo como um array de listas encadeadas, com cada posição deste array correspondendo a um vértice que armazena uma lista de todos os outros vértices adjacentes a si. É eficiente em uso de memória e adaptável, mas a verificação de adjacências é mais lenta e, em aplicações práticas, pode ser mais difícil de implementar.
+
+3) Descreva o funcionamento do algoritmo de busca em largura (BFS) em grafos. Em que tipo de problema ele é mais adequado?
+RESPOSTA: Esse algoritmo explora o grafo "camada" por "camada", visitando todos os vizinhos de um nó antes de se mover para os próximos (até que todos tenham sido visitados), utilizando uma fila e um registro (geralmente um array booleano) para gerenciar tais visitas. É mais adequado para problemas que envolvem encontrar distâncias mínimas entre vértices, especialmente em grafos que não sejam ponderados.
+
+4) Explique o objetivo e o funcionamento do algoritmo de Dijkstra. Qual é a sua principal aplicação?
+RESPOSTA: O algoritmo de Dijkstra tem como principal objetivo encontrar o caminho mais curto entre um vértice de origem e todos os outros em um grafo ponderado (contanto que os pesos não sejam negativos), seja ele direcionado ou não. Ele funciona de forma "gulosa", fazendo a escolha que aparenta ser a melhor em um determinado momento e atualizando posteriormente o registro das distâncias mais curtas conhecidas conforme necessário. Sua principal aplicação atualmente é em sistemas de navegação, como o GPS.
+
+5) Descreva o funcionamento do algoritmo de busca em profundidade (DFS) em grafos. Em que tipo de problema ele é mais adequado?
+RESPOSTA: Esse algoritmo explora o caminho mais "profundo" possível ao longo de cada ramo do grafo antes de retroceder, utilizando uma pilha e um registro (também um array booleano tal como no BFS, geralmente) para gerenciar as visitas feitas. É mais adequado em problemas em que seja necessário explorar a estrutura completa de um grafo para determinar conectividades.
+
+6) Qual a principal diferença entre pesquisa sequencial e pesquisa binária? Em que condições a pesquisa binária é mais eficiente?
+RESPOSTA: A pesquisa sequencial percorre um array do início ao fim, comparando cada elemento com um valor que está sendo buscado até que este seja encontrado ou o final da lista for atingido. Já a pesquisa binária utiliza o princípio de "dividir para conquistar", começando com o meio da lista e indo para uma ou outra metade da lista dependendo do valor a ser buscado (ou parando imediatamente, caso o valor do meio já seja aquele que se busca), repetindo o mesmo processo até que o elemento seja encontrado ou a sub-lista de busca se torne vazia.
+	  A pesquisa binária geralmente é mais eficiente que a sequencial de forma geral (especialmente em listas grandes e/ou caso se planeje fazer múltiplas buscas), mas necessita que o array esteja ordenado para funcionar corretamente.
+
+7) Descreva o funcionamento do algoritmo de ordenação Bubble Sort. Qual a sua complexidade de tempo no pior caso?
+RESPOSTA: O Bubble Sort compara repetidamente pares de elementos adjacentes e troca-os de lugar caso estejam na ordem errada, até que a lista sendo trabalhada esteja completamente ordenada (isto é, quando mais nenhuma troca for necessária). Seu pior caso é O(n^2).
+
+8) Explique o princípio de "dividir para conquistar" aplicado ao algoritmo Merge Sort. Qual a sua complexidade de tempo?
+RESPOSTA: No Merge Sort, a divisão e conquista ocorre ao recursivamente dividir uma lista ao meio para que sejam criadas várias sublistas menores, que são ordenadas e então mescladas para produzir uma nova lista que esteja completamente ordenada. Sua complexidade de tempo é O(N log N) em todos os casos.
+
+9) Defina o conceito de tabela hash (ou tabela de dispersão) e explique sua principal finalidade na organização de dados.
+RESPOSTA: Uma tabela hash é uma estrutura de dados que mapeia chaves para valores, tal como um dicionário, através do uso de uma função hash que calcula uma posição na tabela (um array) no qual o valor deve ser armazenado. Sua principal finalidade é permitir armazenamento e recuperação de dados de forma que a complexidade de tempo seja idealmente O(1); isto é, extremamente rápida independentemente da quantidade de itens guardados.
+
+10) Explique o que é a complexidade de tempo e a complexidade de espaço de um algoritmo. Por que é importante analisar a eficiência de algoritmos?
+RESPOSTA: A complexidade de tempo de um algoritmo é uma medida de quanto tempo ele leva para ser executado em função do tamanho da entrada (não em segundos, mas sim em termo de operações primitivas realizadas), e é denotada com o Big O, que descreve o comportamento do tempo ao passo em que o tamanho de uma entrada N cresce. Já a complexidade de espaço é uma medida de quanto espaço de memória do computador ele consome para ser executado, também em função do tamanho da entrada.
+	  É importante analisar a eficiência de algoritmos para garantir bom desempenho, escalabilidade (isto é, adaptabilidade à entradas cada vez maiores) e baixo uso de recursos.

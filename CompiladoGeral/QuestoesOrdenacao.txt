@@ -1,0 +1,51 @@
+Considerando a análise de complexidade de algoritmos, a notação assintótica O (Big O) é utilizada para:
+RESPOSTA: Representar o limite superior do tempo de execução de um algoritmo, indicando seu pior caso.
+
+Um algoritmo de ordenação que possui complexidade de tempo O(n log n) é, em geral, mais eficiente que um algoritmo com complexidade O(n^2), especialmente para grandes volumes de dados. Essa afirmação está:
+RESPOSTA: Certa, pois O(n log n) cresce mais lentamente que O(n^2).
+
+Qual das seguintes opções representa um algoritmo de ordenação que, no pior caso, possui complexidade de tempo O(n^2), mas pode ter complexidade O(n) no melhor caso (com uma otimização específica)?
+RESPOSTA: Bubble Sort
+OUTRAS OPÇÕES: Merge Sort, Bubble Sort, Heap Sort, Counting Sort
+
+Em relação à complexidade de espaço de algoritmos de ordenação, um algoritmo é considerado "in-place" quando:
+RESPOSTA: Não utiliza nenhum espaço auxiliar além do necessário para armazenar a entrada O(1).
+
+O algoritmo Bubble Sort é conhecido por sua simplicidade. Dada a sequência de números [5, 1, 4, 2, 8], qual será a sequência após a primeira passada completa do algoritmo (considerando ordenação crescente)?
+RESPOSTA: [1, 4, 2, 5, 8]
+
+Sobre o algoritmo Bubble Sort, é correto afirmar que:
+RESPOSTA: É considerado um algoritmo de ordenação estável.
+OUTRAS OPÇÕES: É um algoritmo de ordenação por inserção, possui complexidade de tempo O(n log n) no pior caso, é eficiente para grandes volumes de dados, não realiza trocas se o array já estiver ordenado mesmo sem otimização
+
+Considere a implementação do Bubble Sort em C++ para ordenar um array de inteiros em ordem crescente. Para otimizar o algoritmo e fazê-lo parar caso o array já esteja ordenado, qual modificação é mais adequada?
+RESPOSTA: Utilizar uma flag booleana para verificar se houve alguma troca em uma passada.
+
+O algoritmo Selection Sort funciona selecionando repetidamente o menor (ou maior) elemento da parte não-ordenada da lista e colocando-o no início (ou fim) da parte ordenada. Dada a sequência [6, 4, 1, 8, 3], qual será a sequência após a primeira passada completa do algoritmo (considerando ordenação crescente)?
+RESPOSTA: [1, 4, 6, 8, 3]
+
+Em relação ao algoritmo Selection Sort, assinale a alternativa correta:
+RESPOSTA: O número de trocas realizadas é sempre menor ou igual ao número de elementos do array.
+OUTRAS OPÇÕES: Possui complexidade de tempo O(n log n) no pior caso, é considerado um algoritmo de ordenação estável, é mais eficiente que o Bubble Sort para arrays grandes, sua complexidade de espaço é O(n)
+
+Qual a principal característica que diferencia o Selection Sort do Bubble Sort em termos de movimentação de dados?
+RESPOSTA: O Selection Sort realiza menos trocas, especialmente no pior caso.
+OUTRAS OPÇÕES: O Selection Sort realiza mais comparações, o Bubble Sort é in-place e o Selection Sort não, o Selection Sort é recursivo e o Bubble Sort iterativo, o Bubble Sort é mais adequado para arrays quase ordenados
+
+O algoritmo Insertion Sort constrói a lista final ordenada um item por vez. Dada a sequência [8, 2, 4, 1, 3], qual será a sequência após a terceira iteração do laço principal do algoritmo (considerando ordenação crescente)?
+RESPOSTA: [1, 2, 4, 8, 3]
+
+Sobre o algoritmo Insertion Sort, é correto afirmar que:
+RESPOSTA: É um algoritmo de ordenação por comparação.
+OUTRAS OPÇÕES: Sua complexidade de tempo é O(n^2) no melhor caso, é um algoritmo instável, é eficiente para arrays grandes e/ou desordenados, realiza sempre o mesmo número de comparações independentemente da ordem inicial
+
+Qual a principal vantagem do Insertion Sort em relação ao Bubble Sort e o Selection Sort?
+RESPOSTA: É adaptativo (ou seja, mais eficiente para arrays quase ordenados).
+OUTRAS OPÇÕES: É mais eficiente para arrays grandes, sua complexidade de tempo é O(n log n) no pior caso, requer menos espaço auxiliar, é um algoritmo não-comparativo
+
+O algoritmo Merge Sort é um exemplo clássico de algoritmo de divisão e conquista. Dada a sequência [38, 27, 43, 3, 9, 82, 10], qual é a primeira etapa do processo de "merge" (intercalação) que ocorre após as divisões recursivas terem chegado a subarrays de um único elemento?
+RESPOSTA: Intercalar [3, 9] resultando em [3, 9]
+
+Sobre o algoritmo Merge Sort, assinale a alternativa correta:
+RESPOSTA: É um algoritmo estável.
+OUTRAS OPÇÕES: É um algoritmo in-place, sua complexidade de tempo é O(n^2) no pior caso, não é adequado para ordenação de listas encadeadas, utiliza o conceito de pivô para dividir o array
