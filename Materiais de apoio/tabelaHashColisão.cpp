@@ -1,101 +1,101 @@
 #include <iostream>
 using namespace std;
 
-const int TABLE_SIZE = 5;
+const int TAMANHO_TABELA = 5;
 
-struct HashEntry {
-    int key;
-    int value;
-    bool occupied;
+struct EntradaHash {
+    int chave;
+    int valor;
+    bool ocupado;
 };
 
-void initTable(HashEntry table[]) {
-    for (int i = 0; i < TABLE_SIZE; ++i)
-        table[i].occupied = false;
+void inicializarTabela(EntradaHash tabela[]) {
+    for (int i = 0; i < TAMANHO_TABELA; ++i)
+        tabela[i].ocupado = false;
 }
 
-int hashFunc(int key) {
-    return key % TABLE_SIZE;
+int funcaoHash(int chave) {
+    return chave % TAMANHO_TABELA;
 }
 
-// Função para tratamento de colisão usando linear probing
-int resolveCollision(HashEntry table[], int idx) {
-    int startIdx = idx;
+// Função para tratamento de colisão usando sondagem linear
+int resolverColisao(EntradaHash tabela[], int idx) {
+    int idxInicial = idx;
     do {
-        idx = (idx + 1) % TABLE_SIZE;
-        if (!table[idx].occupied)
+        idx = (idx + 1) % TAMANHO_TABELA;
+        if (!tabela[idx].ocupado)
             return idx;
-    } while (idx != startIdx);
+    } while (idx != idxInicial);
     return -1; // tabela cheia
 }
 
-void insert(HashEntry table[], int key, int value) {
-    int idx = hashFunc(key);
-    if (!table[idx].occupied) {
-        table[idx].key = key;
-        table[idx].value = value;
-        table[idx].occupied = true;
-        cout << "Inserted (" << key << ", " << value << ") at " << idx << endl;
+void inserir(EntradaHash tabela[], int chave, int valor) {
+    int idx = funcaoHash(chave);
+    if (!tabela[idx].ocupado) {
+        tabela[idx].chave = chave;
+        tabela[idx].valor = valor;
+        tabela[idx].ocupado = true;
+        cout << "Inserido (" << chave << ", " << valor << ") na posição " << idx << endl;
         return;
     }
     // Colisão: usar função de tratamento
-    int newIdx = resolveCollision(table, idx);
-    if (newIdx != -1) {
-        table[newIdx].key = key;
-        table[newIdx].value = value;
-        table[newIdx].occupied = true;
-        cout << "Inserted (" << key << ", " << value << ") at " << newIdx << " (collision resolved)\n";
+    int novoIdx = resolverColisao(tabela, idx);
+    if (novoIdx != -1) {
+        tabela[novoIdx].chave = chave;
+        tabela[novoIdx].valor = valor;
+        tabela[novoIdx].ocupado = true;
+        cout << "Inserido (" << chave << ", " << valor << ") na posição " << novoIdx << " (colisão resolvida)\n";
     } else {
-        cout << "Hash table is full!\n";
+        cout << "Tabela hash cheia!\n";
     }
 }
 
-bool search(HashEntry table[], int key, int &value) {
-    int idx = hashFunc(key);
-    int startIdx = idx;
+bool buscar(EntradaHash tabela[], int chave, int &valor) {
+    int idx = funcaoHash(chave);
+    int idxInicial = idx;
     do {
-        if (table[idx].occupied && table[idx].key == key) {
-            value = table[idx].value;
+        if (tabela[idx].ocupado && tabela[idx].chave == chave) {
+            valor = tabela[idx].valor;
             return true;
         }
-        if (!table[idx].occupied)
+        if (!tabela[idx].ocupado)
             return false;
-        idx = (idx + 1) % TABLE_SIZE;
-    } while (idx != startIdx);
+        idx = (idx + 1) % TAMANHO_TABELA;
+    } while (idx != idxInicial);
     return false;
 }
 
-void display(HashEntry table[]) {
-    for (int i = 0; i < TABLE_SIZE; ++i) {
-        if (table[i].occupied)
-            cout << i << ": (" << table[i].key << ", " << table[i].value << ")\n";
+void exibir(EntradaHash tabela[]) {
+    for (int i = 0; i < TAMANHO_TABELA; ++i) {
+        if (tabela[i].ocupado)
+            cout << i << ": (" << tabela[i].chave << ", " << tabela[i].valor << ")\n";
         else
-            cout << i << ": empty\n";
+            cout << i << ": vazio\n";
     }
 }
 
 int main() {
-    HashEntry table[TABLE_SIZE];
-    initTable(table);
+    EntradaHash tabela[TAMANHO_TABELA];
+    inicializarTabela(tabela);
 
-    insert(table, 1, 100);
-    insert(table, 6, 200);
-    insert(table, 11, 300);
-    insert(table, 2, 400);
-    insert(table, 7, 500);
+    inserir(tabela, 1, 100);
+    inserir(tabela, 6, 200);
+    inserir(tabela, 11, 300);
+    inserir(tabela, 2, 400);
+    inserir(tabela, 7, 500);
 
-    display(table);
+    exibir(tabela);
 
-    int value;
-    if (search(table, 6, value))
-        cout << "Found key 6 with value " << value << endl;
+    int valor;
+    if (buscar(tabela, 6, valor))
+        cout << "Chave 6 encontrada com valor " << valor << endl;
     else
-        cout << "Key 6 not found\n";
+        cout << "Chave 6 não encontrada\n";
 
-    if (search(table, 3, value))
-        cout << "Found key 3 with value " << value << endl;
+    if (buscar(tabela, 3, valor))
+        cout << "Chave 3 encontrada com valor " << valor << endl;
     else
-        cout << "Key 3 not found\n";
+        cout << "Chave 3 não encontrada\n";
 
     return 0;
 }
